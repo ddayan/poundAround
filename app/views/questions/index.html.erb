@@ -1,0 +1,10 @@
+<h1>Questions index</h1>
+<table>
+<% @questions.each do |question| %>
+	<tr>
+		<td> Q: <%= question.description %> </td>
+		<td> A: <%= question.answer %> </td>
+	</tr>
+<% end %>
+</table>
+<%= link_to 'New Question', new_question_path %>
