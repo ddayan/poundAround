@@ -8,6 +8,8 @@ gem "rake", "0.8.7"
 
 gem 'sqlite3'
 
+gem 'inherited_resources'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

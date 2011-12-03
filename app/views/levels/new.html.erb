@@ -1,0 +1,40 @@
+<h1> Create new level </h1>
+ 
+<%= form_for(@level) do |f| %>
+  <% if @level.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@level.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <ul>
+    <% @level.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :continent %><br />
+    <%= f.text_field :continent %>
+  </div>
+  <div class="field">
+    <%= f.label :country_1 %><br />
+    <%= f.text_field :country_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :country_2 %><br />
+    <%= f.text_field :country_2 %>
+  </div>
+ 
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ 
+<%= link_to 'Back', levels_path %>

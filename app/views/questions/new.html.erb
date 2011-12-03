@@ -13,12 +13,20 @@
   <% end %>
  
   <div class="field">
+    <%= f.label :level_id %><br />
+    <%= f.collection_select :level_id, Level.all, :id, :name %>
+  </div>
+  <div class="field">
     <%= f.label :Question %><br />
     <%= f.text_field :description %>
   </div>
   <div class="field">
     <%= f.label :Answer %><br />
     <%= f.text_field :answer %>
+  </div>
+  <div class="field">
+    <%= f.label :incorrect_answer %><br />
+    <%= f.text_field :incorrect_answer %>
   </div>
   <div class="actions">
     <%= f.submit %>

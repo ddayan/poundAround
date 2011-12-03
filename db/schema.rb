@@ -10,15 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111203163946) do
+ActiveRecord::Schema.define(:version => 20111203192039) do
 
   create_table "levels", :force => true do |t|
-    t.string "name"
+    t.string   "name"
+    t.string   "continent"
+    t.string   "country_1"
+    t.string   "country_2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "questions", :force => true do |t|
-    t.string "description"
-    t.string "answer"
+    t.string  "description"
+    t.string  "answer"
+    t.integer "level_id"
+    t.string  "incorrect_answer"
   end
 
 end

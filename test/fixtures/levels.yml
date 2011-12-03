@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  continent: MyString
+  country_1: MyString
+  country_2: MyString
+
+two:
+  name: MyString
+  continent: MyString
+  country_1: MyString
+  country_2: MyString

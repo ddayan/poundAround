@@ -12,7 +12,11 @@ PoundAround::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :levels
+  resources :levels do
+    member do
+      get 'finished'
+    end
+  end
   resources :questions
 
   # Sample resource route with options:
