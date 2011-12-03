@@ -5,6 +5,6 @@ class Question < ActiveRecord::Base
   belongs_to :level
   
   def next_question
-    level.questions.first == self ? level.questions.last : nil
+    level.questions.where('questions.id > ?', self.id).first 
   end
 end

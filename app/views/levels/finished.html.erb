@@ -1,3 +1,5 @@
 <h1>finished <%= @level.name %></h1>
 
 <p><%= link_to 'Continue', levels_path %></p>
+
+<%= @level.question_ids.map{|i| session[i] ? 1 : 0 }.sum %>

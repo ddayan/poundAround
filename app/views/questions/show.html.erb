@@ -1,3 +1,4 @@
 <h1>Level <%= @question.level.name %> - <%= @question.description %></h1>
 
-<p><%= link_to @question.incorrect_answer, next_question(@question) %> or <%= link_to @question.answer, next_question(@question) %> </p>
+<p><%= link_to @question.incorrect_answer, answer_question_path(@question, :answer => @question.incorrect_answer) %> 
+  or <%= link_to @question.answer, answer_question_path(@question, :answer => @question.answer) %> </p>

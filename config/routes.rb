@@ -17,7 +17,11 @@ PoundAround::Application.routes.draw do
       get 'finished'
     end
   end
-  resources :questions
+  resources :questions do
+    member do
+      get 'answer'
+    end
+  end
 
   # Sample resource route with options:
   #   resources :products do
