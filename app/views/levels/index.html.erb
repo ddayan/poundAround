@@ -2,6 +2,7 @@
 <div id="map" class="center border">
 </div>
 <a href="questions/2"><div id="play-button"> </div> </a>
+<div id="congrats" class="center"></div>
 
 <script type="text/javascript">
 var level = <%= session[:level] %>;
@@ -28,6 +29,7 @@ case 4:
 case 5:
 	$("#map").css("background-image", "url(/images/Assets/Levels_page/Complete_map.png)");
  	$("#play-button").css("background-image", "url(/images/Assets/Levels_page/Prize_Button.png)");
+ 	$("#congrats").css("background-image", "url(/images/Assets/Levels_page/congrats.png)");
 	break;
 default:
 	console.log(level);

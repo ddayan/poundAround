@@ -141,6 +141,12 @@ width: 21px;
 height: 100px;
 }
 
+#congrats {
+	width:645px;
+	height:200px;
+	float: left;
+	background-position:center;
+}
 
 #play-button {
 	width:145px;
