@@ -1,28 +1,33 @@
+<div id="answer" class="border game-font center" style="display:none;">
+	<span style="padding:50%">
+			<h1 id="aaaa">  </h1>
+		</span>
+</div>
+
 <div id="game-graphic" class="center border"> 
-	<div id="q-headline" class="" style="float: left; width: 50%; padding: 20px;">
-		<h1> <%= @question.description %> </h1>
-			</div>
-	<div id="gumball_machine"> 
-		<div id="ball-1" class="ball"></div>
-		<div id="ball-2" class="ball"></div>
-		<div id="ball-3" class="ball"></div>
-		<div id="ball-4" class="ball"></div>
-		<div id="ball-5" class="ball"></div>
-		<div id="ball-6" class="ball"></div>
-		<div id="ball-7" class="ball"></div>
-		<div id="ball-8" class="ball"></div>
-		<div id="ball-9" class="ball"></div>
-		<div id="ball-10" class="ball"></div>
-		<div id="ball-11" class="ball"></div>
-		<div id="ball-12" class="ball"></div>
-	</div>	
+		<div id="q-headline" class="game-font" style="float: left; width: 50%; padding: 20px;">
+			<h1> <%= @question.description %> </h1>
+		</div>
+		<div id="gumball_machine"> 
+			<div id="ball-1" class="ball"></div>
+			<div id="ball-2" class="ball"></div>
+			<div id="ball-3" class="ball"></div>
+			<div id="ball-4" class="ball"></div>
+			<div id="ball-5" class="ball"></div>
+			<div id="ball-6" class="ball"></div>
+			<div id="ball-7" class="ball"></div>
+			<div id="ball-8" class="ball"></div>
+			<div id="ball-9" class="ball"></div>
+			<div id="ball-10" class="ball"></div>
+			<div id="ball-11" class="ball"></div>
+			<div id="ball-12" class="ball"></div>
+		</div>	
+
 	<!-- <p><%= link_to @question.incorrect_answer, answer_question_path(@question, :answer => @question.incorrect_answer) %> 
-	  or <%= link_to @question.answer, answer_question_path(@question, :answer => @question.answer) %> </p> -->
+	or <%= link_to @question.answer, answer_question_path(@question, :answer => @question.answer) %> </p> -->
 </div>
 
 <div id="button-bar" style="width:820px; margin:20px auto; padding:0px;">
-	<!-- <div id="flag" style="width:80px; height:80px; border-style:solid; float:left; margin-right:10px;"> world ref </div> -->
-	<!-- <div id="currency" class="border"> currency </div> -->
 	<div id="next-button"></div>
 	<div id="currency">
 		<em></em>
@@ -47,28 +52,43 @@ $(function() {
 var ballCount=0;
 var colors = new Array();
 var checked = new Array();
+
+var flag=false;
+
 colors[0]="#FF1D25";
 colors[1]="#3FA8F4";
 colors[2]="#00A14F";
 colors[3]="#FEC01E";
 
-	$('.ball').click(function() {
-		var id = this.id;
-		var ballNum = id.split('-')[1];
-		if (checked[ballNum] != true) {
-			checked[ballNum] = true;
-			$(this).css("background-color", colors[ballNum % colors.length]);
-			ballCount++;
+$('.ball').click(function() {
+	var id = this.id;
+	var ballNum = id.split('-')[1];
+	if (checked[ballNum] != true) {
+		checked[ballNum] = true;
+		$(this).css("background-color", colors[ballNum % colors.length]);
+		ballCount++;
+	} else {
+		checked[ballNum] = false;
+		$(this).css("background-color", "");
+		ballCount--;
+	}
+	// console.log(ballCount);
+});
+
+$('#next-button').click(function() {
+	//		console.log(window.location.pathname + "/answer?answer="+ballCount);
+	if (flag==false) {
+		flag=true;
+		$("#game-graphic").hide();
+		$("#answer").show();
+		if (ballCount == <%= @question.answer%>) {
+			$("#aaaa").append("That is the right answer!!!");
 		} else {
-			checked[ballNum] = false;
-			$(this).css("background-color", "");
-			ballCount--;
+			$("#aaaa").append("Wrong answer, please try again later.");
 		}
-		// console.log(ballCount);
-	});
-	
-	$('#next-button').click(function() {
-//		console.log(window.location.pathname + "/answer?answer="+ballCount);
+	}else {
 		window.location = window.location.pathname + "/answer?answer="+ballCount;
-	});
+	}
+
+});
 </script>

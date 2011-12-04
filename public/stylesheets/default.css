@@ -104,6 +104,10 @@ body {
 	src: url(/images/Assets/Game_page/fonts/CANTABIL.ttf);
 }
 
+.game-font {
+	font-family: q_font;
+}
+
 #q-headline {
 	font-family: q_font;
 }
@@ -197,6 +201,11 @@ height: 100px;
 
 .cenetr-text {
 	text-align:center;
+}
+
+#answer{
+	width:820px; 
+	height:450px;
 }
 
 #game-graphic{
