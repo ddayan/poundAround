@@ -1,6 +1,7 @@
 class LevelsController < InheritedResources::Base
    def index
-     session[:level] = 0 if session[:level] > Level.count
+     # session[:level] = 0 if session[:level] > Level.count #dynamic.....
+     
    end
   
   def show

@@ -1,0 +1,8 @@
+<h1> Game MAP </h1>
+<ul>
+<% @levels.each do |level| %>
+  <li><%= link_to level.name, level %>
+    (<%= level.question_ids.map{|i| session[i] ? 1 : 0 }.sum %>)
+    </li>
+<% end %>
+</ul>

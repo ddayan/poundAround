@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  background: #F2EFDE;
+}
+.center {
+	margin-left:auto;
+	margin-right:auto;
+}
+.ball {
+	border: 3px solid rgb(0,0,0);
+	border-radius: 5em;
+	#box-shadow: 5px 5px 5px black;
+	padding: 0.7em;
+	width: 1em;
+	height: 1em;
+#	background: rgb(155, 155, 155);
+	margin-bottom: 2em;
+	float: right;
+	position: relative;
+#	top: -80px;
+#	right: 150px;
+	text-decoration: none;
+	color: black;
+	position:relative;
+	top: 55px;
+	right: 87px;
+	background-color: #ffffff;
+}
+
+#ball-1 {
+	top: 188px;
+	right: 85px;
+}
+
+#ball-2 {
+	top: 199px;
+	right: 82px;
+}
+#ball-3 {
+	top: 200px;
+	right: 87px;
+	
+}
+#ball-4 {
+	top: 180px;
+	right: 90px;
+}
+#ball-5 {
+	top: 170px;
+	right: 10px;
+	
+}
+#ball-6 {
+	top: 145px;
+	right: -160px;
+	
+}
+#ball-7 {
+	top: 148px;
+	right: -160px;
+	
+}
+#ball-8 {
+	top: 83px;
+	right: 146px;
+	
+}
+#ball-9 {
+	top: 52px;
+	right: 133px;
+	
+}
+#ball-10 {
+	top: 60px;
+	right: 130px;
+	
+}
+#ball-11 {
+	top: 30px;
+	right: 113px;
+	
+}
+#ball-12 {
+	top: 37px;
+	right: -45px;
+	
+}
+
+/*#currency {
+	width:240px; 
+	height:100px; 
+	float:left; 
+	margin-top:35px;
+}
+*/
+
+@font-face {
+	font-family: currency_font;
+	src: url(/images/Assets/Game_page/fonts/Futura_LT_Medium.ttf);
+}
+
+@font-face {
+	font-family: q_font;
+	src: url(/images/Assets/Game_page/fonts/CANTABIL.ttf);
+}
+
+#q-headline {
+	font-family: q_font;
+}
+
+#currency {
+line-height:110px; /*equal to the height of the button*/
+cursor: hand;
+color: #ffffff;
+font-family: currency_font;
+}
+
+#currency em{
+display: block;
+float: left;
+background: url(/images/Assets/Game_page/Currency_Converter/CC_World.png) no-repeat;
+height: 100px;
+width: 119px;
+}
+#currency span{
+display: block;
+float: left;
+background: url(/images/Assets/Game_page/Currency_Converter/CC_bar_middle.png) repeat-x;
+height: 164px;
+
+}
+#currency b{
+display: block;
+float: left;
+background: url(/images/Assets/Game_page/Currency_Converter/CC_bar_end.png) no-repeat;
+width: 21px;
+height: 100px;
+}
+
+
+#play-button {
+	width:145px;
+	height:165px;
+	float: right;
+	margin-right:10%;
+	margin-top:20px;
+	background: url(/images/Assets/Levels_page/Play_button.png) no-repeat;
+	background-position:center;
+}
+
+#next-button {
+	width:145px;
+	height:65px;
+	float: right;
+	margin-right:10%;
+	margin-top:20px;
+	background: url(/images/Assets/Game_page/Buttons/Next_button.png) no-repeat;
+	background-position:center;
+}
+
+
+#map {
+	width:850px; 
+	height:510px;
+#	background: url(/images/Assets/Levels_page/Level_1.png) no-repeat;
+	background-position:center;
+}
+
+#logo {
+	width:650px; 
+	height:450px;
+	margin-top:5%;
+	background: url(/images/logo.png) no-repeat;
+	background-position:center;
+}
+.border {
+	border-style:solid;
+}
+.button {
+	width:185px;
+	height:45px;
+}
+#enter-button {
+	margin-top:5%;
+}
+#map {
+	
+}
+.sub-map{
+	float:left;
+	border-style:solid; 
+	width:32.5%; 
+	height:49%; 
+	padding:0px;
+	margin:0px;
+}
+
+.cenetr-text {
+	text-align:center;
+}
+
+#game-graphic{
+	width:820px; 
+	height:450px;
+}
+#gumball_machine {
+	background: url(/images/gumball_machine.png) no-repeat;
+	float: right;
+	height: 100%;
+	width:40%;
+}
+
+#sub-map-1{
+	width:32.4%;
+}
+#sub-map-2{}
+#sub-map-3{}
+#sub-map-4{
+	width:32.4%;
+}
+#sub-map-5{}
+#sub-map-6{}

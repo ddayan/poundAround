@@ -1,4 +1,8 @@
 class QuestionsController < InheritedResources::Base
+  def index
+    @question = Question.find(params[:id])
+  end
+  
   def answer
     @question = Question.find(params[:id])
     session[@question.id] = (params[:answer] == @question.answer)

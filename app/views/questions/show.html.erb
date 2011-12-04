@@ -1,5 +1,5 @@
 <div id="game-graphic" class="center border"> 
-	<div id="q-headline" class="" style="float: left">
+	<div id="q-headline" class="" style="float: left; width: 50%; padding: 20px;">
 		<h1> <%= @question.description %> </h1>
 			</div>
 	<div id="gumball_machine"> 
@@ -21,7 +21,7 @@
 </div>
 
 <div id="button-bar" style="width:820px; margin:20px auto; padding:0px;">
-	<div id="flag" style="width:80px; height:80px; border-style:solid; float:left; margin-right:10px;"> world ref </div>
+	<!-- <div id="flag" style="width:80px; height:80px; border-style:solid; float:left; margin-right:10px;"> world ref </div> -->
 	<!-- <div id="currency" class="border"> currency </div> -->
 	<div id="next-button"></div>
 	<div id="currency">
@@ -30,7 +30,19 @@
 		<b></b>
 	</div>
 </div>
-
+<script type="text/javascript">
+$(function() {
+	// Use this example, or...
+	$('a[@rel*=lightbox]').lightBox(); // Select all links that contains lightbox in the attribute rel
+	// This, or...
+	$('#gallery a').lightBox(); // Select all links in object with gallery ID
+	// This, or...
+	$('a.lightbox').lightBox(); // Select all links with lightbox class
+	// This, or...
+	$('a').lightBox(); // Select all links in the page
+	// ... The possibility are many. Use your creative or choose one in the examples above
+});
+</script>
 <script type="text/javascript">
 var ballCount=0;
 var colors = new Array();
