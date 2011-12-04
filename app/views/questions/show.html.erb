@@ -1,4 +1,15 @@
-<h1>Level <%= @question.level.name %> - <%= @question.description %></h1>
+<div id="q-jeadline" class="cenetr-text">
+	<h1> Q: <%= @question.description %> </h1>
+		</div>
 
-<p><%= link_to @question.incorrect_answer, answer_question_path(@question, :answer => @question.incorrect_answer) %> 
-  or <%= link_to @question.answer, answer_question_path(@question, :answer => @question.answer) %> </p>
+<div id="game-graphic" class="center border"> 
+	<p><%= link_to @question.incorrect_answer, answer_question_path(@question, :answer => @question.incorrect_answer) %> 
+	  or <%= link_to @question.answer, answer_question_path(@question, :answer => @question.answer) %> </p>
+</div>
+<div id="button-bar" style="width:820px; margin:40px auto; padding:0px;">
+	<div id="crrency" style="width:80px; height:80px; border-style:solid; float:left; margin-right:10px;"> world ref </div>
+	<div id="crrency" style="width:240px; height:45px; border-style:solid; float:left; margin-top:35px;"> currency </div>
+	<div id="enter_button" style="width:185px; height:45px; border-style:solid;float:right;margin-top:35px;"> 
+	Next
+	</div>
+</div>
