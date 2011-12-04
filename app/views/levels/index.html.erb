@@ -1,11 +1,35 @@
-<div id="map"style="width:650px; height:450px; border-style:solid; align:center; margin-left:auto; margin-right:auto;">
-	<div id="sub-map-1" class="sub-map"> 1 </div>
-	<div id="sub-map-2" class="sub-map"> 2 </div>
-	<div id="sub-map-3" class="sub-map"> 3 </div>
-	<div id="sub-map-4" class="sub-map"> 4 </div>
-	<div id="sub-map-5" class="sub-map"> 5 </div>
-	<div id="sub-map-6" class="sub-map"> 6 </div>
+Level: <%= "#{session[:level]}" %>
+<div id="map" class="center border">
 </div>
-<div id="enter_button" class="sub-map" style="width:185px; height:45px; border-style:solid;float: right; margin-right:10%;margin-top:100px"> 
-Next
-</div>
+<a href="questions/2"><div id="play-button"> </div> </a>
+
+<script type="text/javascript">
+var level = <%= session[:level] %>;
+console.log(level);
+switch(level)
+{
+case 0:
+ $("#map").css('background-image', "url(/images/Assets/Levels_page/Level_1.png)");
+  // $.('#map').css('backround','url(/images/Assets/Levels_page/Level_1.png)' );
+  break;
+case 1:
+  // $.('#map').css('backround','url(/images/Assets/Levels_page/Level_2.png)' );
+	$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_2.png)");
+  break;
+case 2:
+ 	$('#map').css('backround','url(/images/Assets/Levels_page/Level_3.png) no-repeat' );
+	break;
+case 3:
+	$('#map').css('backround','url(/images/Assets/Levels_page/Level_4.png) no-repeat' );
+	break;
+case 4:
+	$('#map').css('backround','url(/images/Assets/Levels_page/Level_5.png) no-repeat' );
+	break;
+case 5:
+	$('#map').css('backround','url(/images/Assets/Levels_page/Complete_map.png) no-repeat' );
+ 	$('#play-button').css('backround','url(/images/Assets/Levels_page/Prize_Button.png) no-repeat' );
+	break;
+default:
+	console.log(level);
+}
+</script>
