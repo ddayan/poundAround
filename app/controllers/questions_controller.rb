@@ -1,7 +1,7 @@
 class QuestionsController < InheritedResources::Base
-  def index
-    @question = Question.find(params[:id])
-  end
+  # def index
+  #   @question = Question.find(params[:id])
+  # end
   
   def answer
     @question = Question.find(params[:id])
