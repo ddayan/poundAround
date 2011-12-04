@@ -2,6 +2,11 @@ body {
   margin: 0;
   background: #F2EFDE;
 }
+#outer{
+	width: 1024px;
+	height: 768px;
+}
+
 .center {
 	margin-left:auto;
 	margin-right:auto;
@@ -143,7 +148,7 @@ height: 100px;
 
 #congrats {
 	width:645px;
-	height:200px;
+	height:170px;
 	float: left;
 	background-position:center;
 }
