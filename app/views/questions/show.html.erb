@@ -1,10 +1,10 @@
-<div id="answer" class="border game-font center" style="display:none;">
+<div id="answer" class="game-font center" style="display:none;">
 	<span style="padding:50%">
 			<h1 id="aaaa">  </h1>
 		</span>
 </div>
 
-<div id="game-graphic" class="center border"> 
+<div id="game-graphic" class="center"> 
 		<div id="q-headline" class="game-font" style="float: left; width: 50%; padding: 20px;">
 			<h1> <%= @question.description %> </h1>
 		</div>
@@ -83,6 +83,8 @@ $('#next-button').click(function() {
 		$("#answer").show();
 		if (ballCount == <%= @question.answer%>) {
 			$("#aaaa").append("That is the right answer!!!");
+			// $("#answer").css("background-image", "url(/images/Assets/Success_Page/" + <%= session[:level] + 1 %> + ".png)");
+			$("#answer").append('<img id="theImg" src="/images/Assets/Success_Page/' + <%= session[:level] + 1 %> + '.png" />')
 		} else {
 			$("#aaaa").append("Wrong answer, please try again later.");
 		}

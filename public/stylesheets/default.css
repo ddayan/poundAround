@@ -148,6 +148,15 @@ height: 100px;
 	background-position:center;
 }
 
+#answer {
+	background-position:right bottom;
+	background: no-repeat;
+}
+#theImg{
+	margin-left:20%;
+	margin-top:5%;
+}
+
 #play-button {
 	width:145px;
 	height:165px;
