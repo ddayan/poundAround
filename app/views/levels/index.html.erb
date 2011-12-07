@@ -1,6 +1,7 @@
 <div id="map" class="center">
 </div>
-<a href="levels/<%= session[:level] + 1 %>"><div id="play-button"> </div> </a>
+<%= link_to image_tag("Assets/Levels_page/Play_button.png", :id => "play-button"), 
+		"levels/#{session[:level] + 1}" %>
 <div id="congrats" class="center"></div>
 
 <script type="text/javascript">

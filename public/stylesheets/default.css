@@ -163,25 +163,34 @@ height: 100px;
 }
 
 #play-button {
-	width:145px;
-	height:165px;
+/*	width:145px;*/
+/*	height:165px;*/
 	float: right;
 	margin-right:10%;
 	margin-top:20px;
-	background: url(/images/Assets/Levels_page/Play_button.png) no-repeat;
-	background-position:center;
+/*	background: url(/images/Assets/Levels_page/Play_button.png) no-repeat;*/
+/*	background-position:center;*/
 }
-
+/*
 #next-button {
-	width:145px;
+	width:165px;
 	height:65px;
 	float: right;
 	margin-right:10%;
 	margin-top:20px;
 	background: url(/images/Assets/Game_page/Buttons/Next_button.png) no-repeat;
 	background-position:center;
-}
+}*/
 
+#next-button {
+/*	width:165px;*/
+/*	height:65px;*/
+	float: right;
+	margin-right:10%;
+	margin-top:20px;
+/*	background: url(/images/Assets/Game_page/Buttons/Next_button.png) no-repeat;*/
+/*	background-position:center;*/
+}
 
 #map {
 	width:850px; 
