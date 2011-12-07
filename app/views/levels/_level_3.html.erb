@@ -1,0 +1,57 @@
+<div id="multi-choice" class="question-graphic">
+	<table>
+		<% 1.upto(4).each do |i| %>
+		<tr>
+			<td> <%= image_tag("Assets/Game_page/Game_Illustrations/lev#{@level.id}_ans#{i}_off.gif", :id => "img-#{i}") %> </td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+
+<script type="text/javascript">
+
+var answer = 0;
+
+function switchImg(img){
+	if (img.src.match(/_on/)) {
+		answer = 0;
+		switchAllOff();
+	}else {
+		switchAllOff();
+		img.src = img.src.replace(/_off/, "_on");
+		answer = img.id.split('-')[1];
+	}
+}
+
+function switchAllOff() {
+	$("#multi-choice img").each(function() {
+		this.src = this.src.replace(/_on/, "_off");
+	});
+}
+
+$(document).ready(function(){
+	$("#multi-choice img").click(function(){
+		switchImg(this);
+	});
+	
+	var flag=false;
+	
+	$('#next-button').click(function() {
+		if (flag==false) {
+			flag=true;
+			$("#game-graphic").hide();
+			$("#answer").show();
+			if (answer == <%= @question.answer%>) {
+				$("#aaaa").append("That is the right answer!!!");
+				$("#answer").append('<img id="theImg" src="/images/Assets/Success_Page/' + <%= @level.id %> + '.png" />')
+			} else {
+				$("#aaaa").append("Wrong answer, please try again later.");
+			}
+		}else {
+			window.location = window.location.pathname + "/answer?answer="+answer;
+		}
+
+	});
+	
+});
+</script>
