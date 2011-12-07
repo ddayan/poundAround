@@ -4,9 +4,17 @@ class LevelsController < InheritedResources::Base
      
    end
   
+   def answer
+     level = Level.find(params[:id])
+     session[level.question.id] = (params[:answer] == level.question.answer)
+     session[:level] = session[:level] + 1
+     redirect_to levels_path
+   end
+  
   def show
     @level = Level.find(params[:id])
-    redirect_to @level.questions.first if @level.questions.any?
+    @question = @level.question
+#    redirect_to @level.questions.first if @level.questions.any?
   end
   
   def finished

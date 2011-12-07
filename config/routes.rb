@@ -15,6 +15,7 @@ PoundAround::Application.routes.draw do
   resources :levels do
     member do
       get 'finished'
+      get 'answer'
     end
   end
   resources :questions do

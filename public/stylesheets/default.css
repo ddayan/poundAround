@@ -232,11 +232,19 @@ height: 100px;
 	width:820px; 
 	height:450px;
 }
-#gumball_machine {
-	background: url(/images/gumball_machine.png) no-repeat;
+
+.question-graphic{
 	float: right;
 	height: 100%;
 	width:40%;
+}
+
+#multi-choice table {
+	margin: 3% 0 0 5%;
+}
+
+#gumball-machine {
+	background: url(/images/gumball_machine.png) no-repeat;
 }
 
 #sub-map-1{

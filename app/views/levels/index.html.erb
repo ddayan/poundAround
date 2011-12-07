@@ -1,38 +1,37 @@
-<!-- Level: <%= "#{session[:level]}" %> -->
 <div id="map" class="center">
 </div>
-<a href="questions/2"><div id="play-button"> </div> </a>
+<a href="levels/<%= session[:level] %>"><div id="play-button"> </div> </a>
 <div id="congrats" class="center"></div>
 
 <script type="text/javascript">
-var level = <%= session[:level] %>;
-console.log(level);
-switch(level)
-{
-case 0:
- $("#map").css('background-image', "url(/images/Assets/Levels_page/Level_1.png)");
-  // $.('#map').css('backround','url(/images/Assets/Levels_page/Level_1.png)' );
-  break;
-case 1:
-  // $.('#map').css('backround','url(/images/Assets/Levels_page/Level_2.png)' );
-	$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_2.png)");
-  break;
-case 2:
- 	$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_3.png)");
-	break;
-case 3:
-	$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_4.png)");
-	break;
-case 4:
-	$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_5.png)");
-	break;
-case 5:
-	$("#map").css("background-image", "url(/images/Assets/Levels_page/Complete_map.png)");
- 	$("#play-button").css("background-image", "url(/images/Assets/Levels_page/Prize_Button.png)");
-	$("a").attr("href", "#")
- 	$("#congrats").css("background-image", "url(/images/Assets/Levels_page/congrats.png)");
-	break;
-default:
+$(document).ready(function(){
+	var level = <%= session[:level] %>;
 	console.log(level);
-}
+	switch(level)
+	{
+		case 0:
+		$("#map").css('background-image', "url(/images/Assets/Levels_page/Level_1.png)");
+		break;
+		case 1:
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_2.png)");
+		break;
+		case 2:
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_3.png)");
+		break;
+		case 3:
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_4.png)");
+		break;
+		case 4:
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_5.png)");
+		break;
+		case 5:
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Complete_map.png)");
+		$("#play-button").css("background-image", "url(/images/Assets/Levels_page/Prize_Button.png)");
+		$("a").attr("href", "#")
+		$("#congrats").css("background-image", "url(/images/Assets/Levels_page/congrats.png)");
+		break;
+		default:
+		console.log(level);
+	}
+});
 </script>

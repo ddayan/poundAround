@@ -1,0 +1,62 @@
+<div id="gumball-machine" class="question-graphic"> 
+	<div id="ball-1" class="ball"></div>
+	<div id="ball-2" class="ball"></div>
+	<div id="ball-3" class="ball"></div>
+	<div id="ball-4" class="ball"></div>
+	<div id="ball-5" class="ball"></div>
+	<div id="ball-6" class="ball"></div>
+	<div id="ball-7" class="ball"></div>
+	<div id="ball-8" class="ball"></div>
+	<div id="ball-9" class="ball"></div>
+	<div id="ball-10" class="ball"></div>
+	<div id="ball-11" class="ball"></div>
+	<div id="ball-12" class="ball"></div>
+</div>	
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var ballCount=0;
+	var colors = new Array();
+	var checked = new Array();
+
+	var flag=false;
+
+	colors[0]="#FF1D25";
+	colors[1]="#3FA8F4";
+	colors[2]="#00A14F";
+	colors[3]="#FEC01E";
+
+	$('.ball').click(function() {
+		var id = this.id;
+		var ballNum = id.split('-')[1];
+		if (checked[ballNum] != true) {
+			checked[ballNum] = true;
+			$(this).css("background-color", colors[ballNum % colors.length]);
+			ballCount++;
+		} else {
+			checked[ballNum] = false;
+			$(this).css("background-color", "");
+			ballCount--;
+		}
+	});
+
+	$('#next-button').click(function() {
+		if (flag==false) {
+			flag=true;
+			$("#game-graphic").hide();
+			$("#answer").show();
+			if (ballCount == <%= @question.answer%>) {
+				$("#aaaa").append("That is the right answer!!!");
+				$("#answer").append('<img id="theImg" src="/images/Assets/Success_Page/' + <%= session[:level] + 1 %> + '.png" />')
+			} else {
+				$("#aaaa").append("Wrong answer, please try again later.");
+			}
+		}else {
+			window.location = window.location.pathname + "/answer?answer="+ballCount;
+		}
+
+	});
+});
+</script>

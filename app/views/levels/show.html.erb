@@ -1,1 +1,21 @@
-<h1><%= @level.name %></h1>
+<div id="answer" class="game-font center" style="display:none;">
+	<span style="padding:50%">
+		<h1 id="aaaa">  </h1>
+	</span>
+</div>
+
+<div id="game-graphic" class="center"> 
+	<div id="q-headline" class="game-font" style="float: left; width: 50%; padding: 20px;">
+		<h1> <%= @question.description %> </h1>
+	</div>
+	<%= render "level_#{@level.id}" %>
+</div>
+
+<div id="button-bar" style="width:820px; margin:20px auto; padding:0px;">
+	<div id="next-button"></div>
+	<div id="currency">
+		<em></em>
+		<span>£1 = 1.16$</span>
+		<b></b>
+	</div>
+</div>
