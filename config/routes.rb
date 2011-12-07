@@ -22,7 +22,7 @@ PoundAround::Application.routes.draw do
     end
   end
 
-  resources :photos, :only => [:index, :new]
+  resources :questions, :only => [:index, :new]
 
   # Sample resource route with options:
   #   resources :products do
