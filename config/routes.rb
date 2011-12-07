@@ -6,8 +6,8 @@ PoundAround::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
-  match 'questions' => 'questions#index'
-  match 'questions/new' => 'questions#new'
+  # match 'questions' => 'questions#index'
+  # match 'questions/new' => 'questions#new'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -21,6 +21,8 @@ PoundAround::Application.routes.draw do
       get 'answer'
     end
   end
+
+  resources :photos, :only => [:index, :new]
 
   # Sample resource route with options:
   #   resources :products do
