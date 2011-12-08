@@ -162,6 +162,15 @@ height: 100px;
 	margin-top:5%;
 }
 
+#level-prize {
+	float: left;
+	margin-left: 30%;
+}
+
+#yes-no-question td {
+	padding-left: 50px;
+}
+
 #play-button {
 /*	width:145px;*/
 /*	height:165px;*/

@@ -1,62 +1,58 @@
-<div id="gumball-machine" class="question-graphic"> 
-	<div id="ball-1" class="ball"></div>
-	<div id="ball-2" class="ball"></div>
-	<div id="ball-3" class="ball"></div>
-	<div id="ball-4" class="ball"></div>
-	<div id="ball-5" class="ball"></div>
-	<div id="ball-6" class="ball"></div>
-	<div id="ball-7" class="ball"></div>
-	<div id="ball-8" class="ball"></div>
-	<div id="ball-9" class="ball"></div>
-	<div id="ball-10" class="ball"></div>
-	<div id="ball-11" class="ball"></div>
-	<div id="ball-12" class="ball"></div>
-</div>	
-
-
+<div id="multi-choice" class="question-graphic">
+	<%= image_tag("Assets/Game_page/Game_Illustrations/lev1.png", :style => "padding-top: 50px;") %>
+	<table id="yes-no-question" class="game-font">
+		<tr>
+			<td> <span id="yes"> <h1> Yes </h1> <span> </td>
+			<td> <span id="no"> <h1> Na! </h1> <span> </td>
+		</tr>
+	</table>
+</div>
 
 <script type="text/javascript">
-$(document).ready(function() {
-	var ballCount=0;
-	var colors = new Array();
-	var checked = new Array();
 
-	var flag=false;
+var answer = 0;
 
-	colors[0]="#FF1D25";
-	colors[1]="#3FA8F4";
-	colors[2]="#00A14F";
-	colors[3]="#FEC01E";
+function switchImg(img){
+	if (img.src.match(/_on/)) {
+		answer = 0;
+		switchAllOff();
+	}else {
+		switchAllOff();
+		img.src = img.src.replace(/_off/, "_on");
+		answer = img.id.split('-')[1];
+	}
+}
 
-	$('.ball').click(function() {
-		var id = this.id;
-		var ballNum = id.split('-')[1];
-		if (checked[ballNum] != true) {
-			checked[ballNum] = true;
-			$(this).css("background-color", colors[ballNum % colors.length]);
-			ballCount++;
-		} else {
-			checked[ballNum] = false;
-			$(this).css("background-color", "");
-			ballCount--;
-		}
+function switchAllOff() {
+	$("#multi-choice img").each(function() {
+		this.src = this.src.replace(/_on/, "_off");
 	});
+}
 
+$(document).ready(function(){
+	$("#multi-choice img").click(function(){
+		switchImg(this);
+	});
+	
+	var flag=false;
+	
 	$('#next-button').click(function() {
 		if (flag==false) {
 			flag=true;
 			$("#game-graphic").hide();
 			$("#answer").show();
-			if (ballCount == <%= @question.answer%>) {
-				$("#aaaa").append("That is the right answer!!!");
-				$("#answer").append('<img id="theImg" src="/images/Assets/Success_Page/' + <%= session[:level] + 1 %> + '.png" />')
+			if (answer == <%= @question.answer%>) {
+				$("#aaaa").append("That is the right answer, you got the stamp!!!");
+				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= session[:level] + 1 %> + ".png");
 			} else {
-				$("#aaaa").append("Wrong answer, please try again later.");
+				$("#aaaa").append("Wrong answer, you got a stinky fish.");
+				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
 			}
 		}else {
-			window.location = window.location.pathname + "/answer?answer="+ballCount;
+			window.location = window.location.pathname + "/answer?answer="+answer;
 		}
 
 	});
+	
 });
 </script>

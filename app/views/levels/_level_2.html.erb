@@ -42,10 +42,11 @@ $(document).ready(function(){
 			$("#game-graphic").hide();
 			$("#answer").show();
 			if (answer == <%= @question.answer%>) {
-				$("#aaaa").append("That is the right answer!!!");
-				$("#answer").append('<img id="theImg" src="/images/Assets/Success_Page/' + <%= session[:level] + 1 %> + '.png" />')
+				$("#aaaa").append("That is the right answer, you got the stamp!!!");
+				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= session[:level] + 1 %> + ".png");
 			} else {
-				$("#aaaa").append("Wrong answer, please try again later.");
+				$("#aaaa").append("Wrong answer, you got a stinky fish.");
+				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
 			}
 		}else {
 			window.location = window.location.pathname + "/answer?answer="+answer;
