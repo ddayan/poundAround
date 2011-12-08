@@ -202,7 +202,7 @@ height: 100px;
 #map {
 	width:850px; 
 	height:510px;
-#	background: url(/images/Assets/Levels_page/Level_1.png) no-repeat;
+	background-repeat : no-repeat;
 	background-position:center;
 }
 

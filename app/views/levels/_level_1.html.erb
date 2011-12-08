@@ -13,10 +13,10 @@
 var answer = 0;
 
 function switchImg(img){
-	if (img.src.match(/_on/)) {
+	if (img.src.match(/_on/)){
 		answer = 0;
 		switchAllOff();
-	}else {
+	} else{
 		switchAllOff();
 		img.src = img.src.replace(/_off/, "_on");
 		answer = img.id.split('-')[1];
