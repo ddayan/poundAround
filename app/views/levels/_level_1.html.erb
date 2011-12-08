@@ -39,7 +39,7 @@ $(document).ready(function(){
 	$('#next-button').click(function() {
 		if (flag==false) {
 			flag=true;
-			$("#game-graphic").hide();
+			$("#question").hide();
 			$("#answer").show();
 			if (answer == <%= @question.answer%>) {
 				$("#aaaa").append("That is the right answer, you got the stamp!!!");
