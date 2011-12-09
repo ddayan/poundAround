@@ -2,7 +2,50 @@ body {
   margin: 0;
   background: #F2EFDE;
 }
-#outer{
+
+.map-stamp {
+	position:relative;
+	visibility:hidden;
+}
+
+#Europe-map-stamp {
+	width : 107px; 
+	height : 88px;
+	top : 111px;
+	left : 405px;
+	background : url("/images/Assets/Levels_page/stamp_euro.png") no-repeat;
+}
+
+#Asia-map-stamp {
+	width : 145px; 
+	height : 103px;
+	top : 60px;
+	left : 533px;
+	background : url("/images/Assets/Levels_page/stamp_asia.png") no-repeat;
+}
+
+#Australia-map-stamp {
+	width : 175px; 
+	height : 93px;
+	top : 147px;
+	left : 665px;
+	background : url("/images/Assets/Levels_page/stamp_aus.png") no-repeat;
+}
+
+#Africa-map-stamp {
+	width : 175px; 
+	height : 93px;
+	top : -35px;
+	left : 367px;
+	background : url("/images/Assets/Levels_page/stamp_africa.png") no-repeat;
+}
+
+#America-map-stamp {
+	width : 175px; 
+	height : 93px;
+	top : -225px;
+	left : 121px;
+	background : url("/images/Assets/Levels_page/stamp_america.png") no-repeat;
 }
 
 .center {

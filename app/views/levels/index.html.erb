@@ -1,4 +1,9 @@
 <div id="map" class="center">
+	<div id="Europe-map-stamp" class="map-stamp"> </div>
+	<div id="Asia-map-stamp" class=" map-stamp"> </div>
+	<div id="Australia-map-stamp" class=" map-stamp"> </div>
+	<div id="Africa-map-stamp" class=" map-stamp"> </div>
+	<div id="America-map-stamp" class=" map-stamp"> </div>
 </div>
 <%= link_to image_tag("Assets/Levels_page/Play_button.png", :id => "play-button"), 
 		"levels/#{session[:level] + 1}" %>
@@ -11,28 +16,37 @@ $(document).ready(function(){
 	switch(level)
 	{
 		case 0:
-		$("#map").css('background-image', "url(/images/Assets/Levels_page/Level_1.png)");
+		$("#map").css('background-image', "url(/images/Assets/Levels_page/Level_1B.png)");
 		break;
 		case 1:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_2.png)");
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_2B.png)");
 		break;
 		case 2:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_3.png)");
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_3B.png)");
 		break;
 		case 3:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_4.png)");
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_4B.png)");
 		break;
 		case 4:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_5.png)");
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_5B.png)");
 		break;
 		case 5:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Complete_map.png)");
-		$("#play-button").css("background-image", "url(/images/Assets/Levels_page/Prize_Button.png)");
+		$("#map").css("background-image", "url(/images/Assets/Levels_page/Complete_mapB.png)");
+		$("#play-button img").attr("src", "/images/Assets/Levels_page/Prize_Button.png");
 		$("a").attr("href", "#")
 		$("#congrats").css("background-image", "url(/images/Assets/Levels_page/congrats.png)");
 		break;
 		default:
 		console.log(level);
 	}
+	
+	<% (1..session[:level]).each do |level| %>
+	var id = '#<%= j(Level.find(level).name) %>-map-stamp';
+		<% if !session[Level.find(level).question.id] %>
+			$(id).css("background-image", "url(/images/Assets/Levels_page/fish_small.png)");
+		<% end %>
+		$(id).css("visibility", "visible");
+	<% end %>
+	
 });
 </script>
