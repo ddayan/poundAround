@@ -5,8 +5,7 @@
 	<div id="Africa-map-stamp" class=" map-stamp"> </div>
 	<div id="America-map-stamp" class=" map-stamp"> </div>
 </div>
-<%= link_to image_tag("Assets/Levels_page/Play_button.png", :id => "play-button"), 
-		"levels/#{session[:level] + 1}" %>
+<a id="play-button" href="levels/<%= session[:level] + 1 %>"> </a>
 <div id="congrats" class="center"></div>
 
 <script type="text/javascript">
@@ -32,6 +31,7 @@ $(document).ready(function(){
 		break;
 		case 5:
 		$("#map").css("background-image", "url(/images/Assets/Levels_page/Complete_mapB.png)");
+		$("#play-button").attr("id", "prize-button");
 		$("#play-button").attr("src", "/images/Assets/Levels_page/Prize_button.png");
 		$("a").attr("href", "#")
 		$("#congrats").css("background-image", "url(/images/Assets/Levels_page/congrats.png)");

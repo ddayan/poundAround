@@ -237,34 +237,57 @@ height: 100px;
 	padding: 50px 20px 20px 100px;
 }*/
 
-#play-button {
-/*	width:145px;*/
-/*	height:165px;*/
+/*#play-button {
+	width:145px;
+	height:165px;
 	float: right;
 	margin-right:10%;
 	margin-top:20px;
-/*	background: url(/images/Assets/Levels_page/Play_button.png) no-repeat;*/
-/*	background-position:center;*/
-}
-/*
-#next-button {
-	width:165px;
-	height:65px;
-	float: right;
-	margin-right:10%;
-	margin-top:20px;
-	background: url(/images/Assets/Game_page/Buttons/Next_button.png) no-repeat;
+	background: url(/images/Assets/Levels_page/Play_button.png) no-repeat;
 	background-position:center;
-}*/
+}
+*/
+
+#prize-button {
+	width:165px;
+	height:75px;
+	float: right;
+	margin-right:10%;
+	margin-top:20px;
+	background: url(/images/Assets/Buttons/Prize_bt.png) no-repeat;
+	background-position:center;
+}
+
+#prize-button:active {
+	background: url(/images/Assets/Buttons/Prize_bt_C.png) no-repeat;
+}
+
+#play-button {
+	width:165px;
+	height:75px;
+	float: right;
+	margin-right:10%;
+	margin-top:20px;
+	background: url(/images/Assets/Buttons/Play_bt.png) no-repeat;
+	background-position:center;
+}
+
+#play-button:active {
+	background: url(/images/Assets/Buttons/Play_bt_C.png) no-repeat;
+}
 
 #next-button {
-/*	width:165px;*/
-/*	height:65px;*/
+	width:165px;
+	height:75px;
 	float: right;
 	margin-right:10%;
 	margin-top:20px;
-/*	background: url(/images/Assets/Game_page/Buttons/Next_button.png) no-repeat;*/
-/*	background-position:center;*/
+	background: url(/images/Assets/Buttons/Next_bt.png) no-repeat;
+	background-position:center;
+}
+
+#next-button:active {
+	background: url(/images/Assets/Buttons/Next_bt_C.png) no-repeat;
 }
 
 #map {
