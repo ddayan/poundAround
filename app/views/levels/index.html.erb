@@ -42,6 +42,7 @@ $(document).ready(function(){
 	
 	<% (1..session[:level]).each do |level| %>
 	var id = '#<%= j(Level.find(level).name) %>-map-stamp';
+	console.log(<%= !session[Level.find(level).question.id] %>);
 		<% if !session[Level.find(level).question.id] %>
 			$(id).css("background-image", "url(/images/Assets/Levels_page/fish_small.png)");
 		<% end %>
