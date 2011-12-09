@@ -17,7 +17,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var ballCount=0;
+	var answer=0;
 	var colors = new Array();
 	var checked = new Array();
 
@@ -34,11 +34,11 @@ $(document).ready(function() {
 		if (checked[ballNum] != true) {
 			checked[ballNum] = true;
 			$(this).css("background-color", colors[ballNum % colors.length]);
-			ballCount++;
+			answer++;
 		} else {
 			checked[ballNum] = false;
 			$(this).css("background-color", "");
-			ballCount--;
+			answer--;
 		}
 	});
 
@@ -48,7 +48,7 @@ $(document).ready(function() {
 			$("#question").hide();
 			$("#answer").show();
 			$("#answer").append("<img id='level-prize' src=''/>");
-			if (ballCount == <%= @question.answer%>) {
+			if (answer == <%= @question.answer%>) {
 				$("#aaaa").append("That is the right answer, you got the stamp!!!");
 				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= session[:level] + 1 %> + ".png");
 			} else {
