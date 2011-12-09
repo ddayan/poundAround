@@ -40,7 +40,7 @@ $(document).ready(function(){
 		if (flag==false) {
 			flag=true;
 			$("#question").hide();
-			$("#answer").show();
+			$("#answer").append("<img id='level-prize' src=''/>");
 			if (answer == <%= @question.answer%>) {
 				$("#aaaa").append("That is the right answer, you got the stamp!!!");
 				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= session[:level] + 1 %> + ".png");
@@ -48,6 +48,7 @@ $(document).ready(function(){
 				$("#aaaa").append("Wrong answer, you got a stinky fish.");
 				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
 			}
+			$("#answer").show();
 		}else {
 			window.location = window.location.pathname + "/answer?answer="+answer;
 		}

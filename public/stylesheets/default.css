@@ -1,6 +1,11 @@
 body {
   margin: 0;
+	padding: 0;
   background: #F2EFDE;
+}
+#outer {
+	margin: 0;
+	padding: 0;
 }
 
 .map-stamp {
@@ -194,23 +199,43 @@ height: 100px;
 	background-position:center;
 }
 
-#answer {
+/*#answer {
 	background-position:right bottom;
 	background: no-repeat;
 }
+*/
 #theImg{
 	margin-left:20%;
 	margin-top:5%;
 }
 
 #level-prize {
-	float: left;
-	margin-left: 30%;
+	margin-left:150px;
+	position:relative;
+	top:-100px;
+/*	float: right;*/
+/*	margin-left: 30%;*/
 }
 
 #yes-no-question td {
 	padding-left: 50px;
 }
+
+#question {
+	height : 100%;
+}
+
+#answer {
+	height: 100%;
+	display: none; 
+/*	padding: 50px 20px 20px 100px;*/
+}
+
+/*#answer img {
+	position: relative;
+	top: -50px;
+	padding: 50px 20px 20px 100px;
+}*/
 
 #play-button {
 /*	width:145px;*/
@@ -282,10 +307,10 @@ height: 100px;
 	text-align:center;
 }
 
-#answer{
+/*#answer{
 	width:820px; 
 	height:450px;
-}
+}*/
 
 #game-graphic{
 	width:820px; 
