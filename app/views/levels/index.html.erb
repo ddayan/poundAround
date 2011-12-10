@@ -1,13 +1,13 @@
-<div id="map" class="center">
+<div id="map" class="center border">
 	<div id="Europe-map-stamp" class="map-stamp"> </div>
 	<div id="Asia-map-stamp" class=" map-stamp"> </div>
 	<div id="Australia-map-stamp" class=" map-stamp"> </div>
 	<div id="Africa-map-stamp" class=" map-stamp"> </div>
 	<div id="America-map-stamp" class=" map-stamp"> </div>
-</div>
-<a id="play-button" class="button float-right" href="levels/<%= session[:level] + 1 %>"> </a>
-<div id="congrats" class="center"></div>
 
+	<a id="play-button" class="button float-right" href="levels/<%= session[:level] + 1 %>"> </a>
+	<div id="congrats" class="center"></div>
+</div>
 <script type="text/javascript">
 $(document).ready(function(){
 	var level = <%= session[:level] %>;

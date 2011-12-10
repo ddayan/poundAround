@@ -1,59 +1,71 @@
-<div id="multi-choice" class="question-graphic">
-	<%= image_tag("Assets/Game_page/Game_Illustrations/lev1.png", :style => "padding-top: 50px;") %>
+<div id="multi-choice" class="question-graphic" style="margin-top:0; padding-top:0;width:25%">
+	<%= image_tag("Assets/Game_page/Game_Illustrations/lev1.png", :style => "float:right; position:relative; top:-0px") %>
 	<table id="yes-no-question" class="game-font">
 		<tr>
+			<td> <div id="yes-box" class="check-box" ></div> </td>
 			<td> <span id="yes"> <h1> Yes </h1> <span> </td>
+		</tr>
+		<tr>
+			<td> <div id="no-box" class="check-box"></div> </td>
 			<td> <span id="no"> <h1> Na! </h1> <span> </td>
 		</tr>
 	</table>
 </div>
 
-<script type="text/javascript">
+		<script type="text/javascript">
 
-var answer = 0;
+		var answer = 0;
+		var colors = new Array();
+		colors[0]="#FF1D25";
+		colors[1]="#3FA8F4";
+		colors[2]="#00A14F";
+		colors[3]="#FEC01E";
+		
+		var red=0;
+		var blue=1;
+		var green=2;
+		var yellow=3;
+		
 
-function switchImg(img){
-	if (img.src.match(/_on/)){
-		answer = 0;
-		switchAllOff();
-	} else{
-		switchAllOff();
-		img.src = img.src.replace(/_off/, "_on");
-		answer = img.id.split('-')[1];
-	}
-}
-
-function switchAllOff() {
-	$("#multi-choice img").each(function() {
-		this.src = this.src.replace(/_on/, "_off");
-	});
-}
-
-$(document).ready(function(){
-	$("#multi-choice img").click(function(){
-		switchImg(this);
-	});
-	
-	var flag=false;
-	
-	$('#next-button').click(function() {
-		if (flag==false) {
-			flag=true;
-			$("#question").hide();
-			$("#answer").append("<img id='level-prize' src=''/>");
-			if (answer == <%= @question.answer%>) {
-				$("#aaaa").append("That is the right answer, you got the stamp!!!");
-				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= session[:level] + 1 %> + ".png");
-			} else {
-				$("#aaaa").append("Wrong answer, you got a stinky fish.");
-				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
-			}
-			$("#answer").show();
-		}else {
-			window.location = window.location.pathname + "/answer?answer="+answer;
+		function switchImg(box){
+			switchAllOff();
+			$(box).toggleClass("on");
+			$(".question-graphic img").attr("src", "/images/Assets/Game_page/Game_Illustrations/lev1_" + box.id.split('-')[0] + ".png")
 		}
 
-	});
-	
-});
-</script>
+		function switchAllOff() {
+			$(".check-box").each(function() {
+				$(this).removeClass("on");
+			});
+		}
+
+		$(document).ready(function(){
+			$(".check-box").click(function(){
+				switchImg(this);
+			});
+
+			var flag=false;
+
+			$('#next-button').click(function() {
+				if (flag==false) {
+					flag=true;
+					$("#question").hide();
+					$("#answer").append("<img id='level-prize' src=''/>");
+					if (answer == <%= @question.answer%>) {
+						$("#a-headline").append("That is the right answer, you got the stamp!!!");
+						$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= @level.id %> + ".png");
+						$("#answer img").addClass("stamp");
+					} else {
+						$("#a-headline").append("Wrong answer, you got a stinky fish.");
+						$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
+						$("#answer img").addClass("fish");
+					}
+					$("#answer").show();
+				}else {
+					window.location = window.location.pathname + "/answer?answer="+answer;
+				}
+
+			});
+
+		});
+		</script>

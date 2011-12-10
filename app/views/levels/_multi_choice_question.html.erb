@@ -42,13 +42,13 @@ $(document).ready(function(){
 			$("#question").hide();
 			$("#answer").append("<img id='level-prize' src=''/>");
 			if (answer == <%= @question.answer%>) {
-				$("#aaaa").append("That is the right answer, you got the stamp!!!");
+				$("#a-headline").append("That is the right answer, you got the stamp!!!");
 				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= @level.id %> + ".png");
+				$("#answer img").addClass("stamp");
 			} else {
-				$("#aaaa").append("Wrong answer, you got a stinky fish.");
+				$("#a-headline").append("Wrong answer, you got a stinky fish.");
 				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
-				$("#answer img").css("margin-left", "300px");
-				$("#answer img").css("margin-top", "100px");
+				$("#answer img").addClass("fish");
 			}
 			$("#answer").show();
 		}else {

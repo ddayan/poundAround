@@ -18,11 +18,11 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	var answer=0;
-	var colors = new Array();
+	
 	var checked = new Array();
 
 	var flag=false;
-
+	var colors = new Array();
 	colors[0]="#FF1D25";
 	colors[1]="#3FA8F4";
 	colors[2]="#00A14F";
@@ -49,10 +49,10 @@ $(document).ready(function() {
 			$("#answer").show();
 			$("#answer").append("<img id='level-prize' src=''/>");
 			if (answer == <%= @question.answer%>) {
-				$("#aaaa").append("That is the right answer, you got the stamp!!!");
+				$("#a-headline").append("That is the right answer, you got the stamp!!!");
 				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= session[:level] + 1 %> + ".png");
 			} else {
-				$("#aaaa").append("Wrong answer, you got a stinky fish.");
+				$("#a-headline").append("Wrong answer, you got a stinky fish.");
 				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
 			}
 			$("#answer").show();

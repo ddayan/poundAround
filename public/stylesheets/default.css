@@ -16,40 +16,40 @@ body {
 #Europe-map-stamp {
 	width : 107px; 
 	height : 88px;
-	top : 111px;
-	left : 405px;
+	top : 151px;
+	left : 475px;
 	background : url("/images/Assets/Levels_page/stamp_euro.png") no-repeat;
 }
 
 #Asia-map-stamp {
 	width : 145px; 
 	height : 103px;
-	top : 60px;
-	left : 533px;
+	top : 108px;
+	left : 585px;
 	background : url("/images/Assets/Levels_page/stamp_asia.png") no-repeat;
 }
 
 #Australia-map-stamp {
 	width : 175px; 
 	height : 93px;
-	top : 147px;
-	left : 665px;
+	top : 196px;
+	left : 715px;
 	background : url("/images/Assets/Levels_page/stamp_aus.png") no-repeat;
 }
 
 #Africa-map-stamp {
 	width : 175px; 
 	height : 93px;
-	top : -35px;
-	left : 367px;
+	top : 10px;
+	left : 417px;
 	background : url("/images/Assets/Levels_page/stamp_africa.png") no-repeat;
 }
 
 #America-map-stamp {
 	width : 175px; 
 	height : 93px;
-	top : -225px;
-	left : 121px;
+	top : -179px;
+	left : 171px;
 	background : url("/images/Assets/Levels_page/stamp_america.png") no-repeat;
 }
 
@@ -57,6 +57,7 @@ body {
 	margin-left:auto;
 	margin-right:auto;
 }
+
 .ball {
 	border: 3px solid rgb(0,0,0);
 	border-radius: 5em;
@@ -137,14 +138,6 @@ body {
 	
 }
 
-/*#currency {
-	width:240px; 
-	height:100px; 
-	float:left; 
-	margin-top:35px;
-}
-*/
-
 @font-face {
 	font-family: currency_font;
 	src: url(/images/Assets/Game_page/fonts/Futura_LT_Medium.ttf);
@@ -199,11 +192,6 @@ height: 100px;
 	background-position:center;
 }
 
-/*#answer {
-	background-position:right bottom;
-	background: no-repeat;
-}
-*/
 #theImg{
 	margin-left:20%;
 	margin-top:5%;
@@ -217,36 +205,66 @@ height: 100px;
 /*	margin-left: 30%;*/
 }
 
+#yes-no-question {
+	position:relative;
+	top: -300px;
+	left: -300px;
+}
+
+.check-box {
+	font-size: 1.2em;
+	border: 3px solid rgb(255, 255, 255);
+	border-radius: 10px;
+	border-color: black;
+#	box-shadow: 5px 5px 5px black;
+	padding: 1em;
+	text-decoration: none;
+	color: black;
+	margin:0;
+	width:20px;
+	height:10px;
+	
+}
+
+#yes-box.on{
+	background-color: #00A14F;
+}
+
+#no-box.on {
+	background-color: #FF1D25;
+}
+
 #yes-no-question td {
-	padding-left: 50px;
+
 }
 
 #question {
-	height : 100%;
+	height : 77.4%;
 }
 
 #answer {
-	height: 100%;
+	height: 77.4%;
 	display: none; 
-/*	padding: 50px 20px 20px 100px;*/
+}
+#a-headline {
+	font-family: q_font;
 }
 
-/*#answer img {
-	position: relative;
-	top: -50px;
-	padding: 50px 20px 20px 100px;
-}*/
-
-/*#play-button {
-	width:145px;
-	height:165px;
-	float: right;
-	margin-right:10%;
-	margin-top:20px;
-	background: url(/images/Assets/Levels_page/Play_button.png) no-repeat;
-	background-position:center;
+.headline{
+float: left;
+width: 25%;
+padding: 50px 20px 20px 100px;
 }
-*/
+
+#level-prize.fish {
+	margin-left:120px;
+	margin-top:210px;
+}
+
+#level-prize.stamp {
+	margin-left:10px;
+	margin-top:210px;
+}
 
 #prize-button {
 	background: url(/images/Assets/Buttons/Prize_bt.png) no-repeat;
@@ -283,7 +301,15 @@ height: 100px;
 
 .float-right {
 	float: right;
-	margin-right:10%;
+	margin-right:1%;
+	margin-top:20px;
+	margin-bottom:0;
+	padding:0;
+}
+
+.float-left {
+	float: left;
+	margin-left:50px;
 	margin-top:20px;
 }
 
@@ -292,11 +318,13 @@ height: 100px;
 	width:165px;
 	height:75px;
 	background-position:center;
+	position:relative;
+	bottom:-40px;
 }
 
 #map {
-	width:850px; 
-	height:510px;
+	width:950px; 
+	height:600px;
 	background-repeat : no-repeat;
 	background-position:center;
 }
@@ -311,11 +339,7 @@ height: 100px;
 .border {
 	border-style:solid;
 }
-/*.button {
-	width:185px;
-	height:45px;
-}
-*/
+
 .sub-map{
 	float:left;
 	border-style:solid; 
@@ -328,11 +352,6 @@ height: 100px;
 .cenetr-text {
 	text-align:center;
 }
-
-/*#answer{
-	width:820px; 
-	height:450px;
-}*/
 
 #game-graphic{
 	width:820px; 
