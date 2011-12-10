@@ -371,6 +371,8 @@ padding: 50px 20px 20px 100px;
 }
 
 #gumball-machine {
+	width: 35%;
+	float: right;
 	background: url(/images/gumball_machine.png) no-repeat;
 }
 
