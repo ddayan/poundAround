@@ -161,6 +161,8 @@ line-height:110px; /*equal to the height of the button*/
 cursor: hand;
 color: #ffffff;
 font-family: currency_font;
+position:relative;
+bottom:-35px;
 }
 
 #currency em{
@@ -319,7 +321,7 @@ padding: 50px 20px 20px 100px;
 	height:75px;
 	background-position:center;
 	position:relative;
-	bottom:-40px;
+	bottom:-65px;
 }
 
 #map {
@@ -361,7 +363,7 @@ padding: 50px 20px 20px 100px;
 .question-graphic{
 	float: right;
 	height: 100%;
-	width:40%;
+	width:60%;
 }
 
 #multi-choice table {
