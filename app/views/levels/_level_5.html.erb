@@ -50,10 +50,12 @@ $(document).ready(function() {
 			$("#answer").append("<img id='level-prize' src=''/>");
 			if (answer == <%= @question.answer%>) {
 				$("#a-headline").append("That is the right answer, you got the stamp!!!");
-				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= session[:level] + 1 %> + ".png");
+				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= @level.id %> + ".png");
+				$("#answer img").addClass("stamp");
 			} else {
 				$("#a-headline").append("Wrong answer, you got a stinky fish.");
 				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
+				$("#answer img").addClass("fish");
 			}
 			$("#answer").show();
 		}else {

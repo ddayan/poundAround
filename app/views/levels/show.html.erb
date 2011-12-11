@@ -1,9 +1,9 @@
-<div id="map" class="center border"> 
-	<div id="answer" class="game-font border">
+<div id="map" class="center"> 
+	<div id="answer" class="game-font">
 		<h1 id="a-headline" class="headline" style="width:200px">  </h1>
 		<!-- <%= image_tag("", :id => "level-prize") %> -->
 	</div>
-	<div id="question" class="border">
+	<div id="question">
 		<div id="q-headline" class="game-font headline">
 			<h1> <%= @question.description %> </h1>
 		</div>
@@ -14,7 +14,7 @@
 <!-- <div id="button-bar" style="width:820px; margin:20px auto; padding:0px;"> -->
 	<a id="next-button" class="button float-right"></a>
 	<!-- <%= image_tag("Assets/Game_page/Buttons/Next_button.png", :id => "next-button")%> -->
-	<div id="currency" class="float-left border">
+	<div id="currency" class="float-left">
 		<em></em>
 		<span>£1 = <%= "#{@level.currency}" %></span>
 		<b></b>
