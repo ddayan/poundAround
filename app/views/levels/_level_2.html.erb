@@ -1,1 +1,61 @@
-<%= render("multi_choice_question") %>
+<div id="multi-choice" class="question-graphic">
+	<table style="margin-left:30%; margin-top:10%">
+		<% 1.upto(4).each do |i| %>
+		<tr>
+			<td> <%= image_tag("Assets/Game_page/Game_Illustrations/lev#{@level.id}_ans#{i}_off.png", :id => "img-#{i}") %> </td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+
+<script type="text/javascript">
+
+var answer = 0;
+
+function switchImg(img){
+	if (img.src.match(/_on/)) {
+		answer = 0;
+		switchAllOff();
+	}else {
+		switchAllOff();
+		img.src = img.src.replace(/_off/, "_on");
+		answer = img.id.split('-')[1];
+	}
+}
+
+function switchAllOff() {
+	$("#multi-choice img").each(function() {
+		this.src = this.src.replace(/_on/, "_off");
+	});
+}
+
+$(document).ready(function(){
+	$("#multi-choice img").click(function(){
+		switchImg(this);
+	});
+	
+	var flag=false;
+	
+	$('#next-button').click(function() {
+		if (flag==false) {
+			flag=true;
+			$("#question").hide();
+			$("#answer").append("<img id='level-prize' src=''/>");
+			if (answer == <%= @question.answer%>) {
+				$("#a-headline").append("That is the right answer, you got the stamp!!!");
+				$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= @level.id %> + ".png");
+				$("#answer img").addClass("stamp");
+			} else {
+				$("#a-headline").append("Wrong answer, you got a stinky fish.");
+				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
+				$("#answer img").addClass("fish");
+			}
+			$("#answer").show();
+		}else {
+			window.location = window.location.pathname + "/answer?answer="+answer;
+		}
+
+	});
+	
+});
+</script>
