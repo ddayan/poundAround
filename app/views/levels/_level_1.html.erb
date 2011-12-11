@@ -30,7 +30,8 @@
 		function switchImg(box){
 			switchAllOff();
 			$(box).toggleClass("on");
-			$(".question-graphic img").attr("src", "/images/Assets/Game_page/Game_Illustrations/lev1_" + box.id.split('-')[0] + ".png")
+			answer = box.id.split('-')[0];
+			$(".question-graphic img").attr("src", "/images/Assets/Game_page/Game_Illustrations/lev1_" + answer + ".png")
 		}
 
 		function switchAllOff() {
@@ -51,7 +52,7 @@
 					flag=true;
 					$("#question").hide();
 					$("#answer").append("<img id='level-prize' src=''/>");
-					if (answer == <%= @question.answer%>) {
+					if (answer == "<%= @question.answer %>") {
 						$("#a-headline").append("That is the right answer, you got the stamp!!!");
 						$("#answer img").attr("src","/images/Assets/Success_Page/" + <%= @level.id %> + ".png");
 						$("#answer img").addClass("stamp");
