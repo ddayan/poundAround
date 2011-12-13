@@ -22,11 +22,19 @@
 
 <script type="text/javascript">
 
+numOfLevels=5;
+
 var colors = new Array();
 colors[0]="#FF1D25";
 colors[1]="#3FA8F4";
 colors[2]="#00A14F";
 colors[3]="#FEC01E";
+
+var prize = new Array();
+for (var i=1; i < numOfLevels; i++) {
+	prize[i]=false;
+}
+
 
 var red=0;
 var blue=1;
@@ -44,20 +52,32 @@ Storage.prototype.getObject = function(key) {
     var value = this.getItem(key);
     return value && JSON.parse(value);
 }
+//init level
+var level = 0;
 
-var level = 3;
-
-var levels={1 : {"question":"Can you buy a cellphone for one pound?", 'answer':'yes', 'currency':'1$'},
-						2 : {"question":"How much food can you buy for one pound?", 'answer':'4', 'currency':'1$'},
-						3 : {"question":"How many trees can you save for one pound?", 'answer':'3', 'currency':'1$'},
-						4 : {"question":"What can you buy or do in Egypt for one pound?", 'answer':'2', 'currency':'1$'},
-						5 : {"question":"How many gum balls can you buy for one pound?", 'answer':'3', 'currency':'1$'} };
+var levels={1 : {"name":"Europe", "question":"Can you buy a cellphone for one pound?", 'answer':'yes', 'currency':'1$'},
+						2 : {"name":"Asia", "question":"How much food can you buy for one pound?", 'answer':'4', 'currency':'1$'},
+						3 : {"name":"Australia", "question":"How many trees can you save for one pound?", 'answer':'3', 'currency':'1$'},
+						4 : {"name":"Africa", "question":"What can you buy or do in Egypt for one pound?", 'answer':'2', 'currency':'1$'},
+						5 : {"name":"America", "question":"How many gum balls can you buy for one pound?", 'answer':'3', 'currency':'1$'} };
 
 localStorage.setObject('levels', levels);
 
 $("#enter-button").click(function() {
 	goToMap();
 });
+
+function updateMapStamps(){
+	var db_levels = localStorage.getObject('levels');
+	for (var i=1; i<=level; i++){
+		var db_level = db_levels[i];
+		var id = '#' + db_level.name + '-map-stamp';
+		console.log(db_level.name + '-map-stamp');
+		if (!prize[i])
+				$(id).css("background-image", "url(/images/Assets/Levels_page/fish_small.png)");
+				$(id).css("visibility", "visible");
+	}
+}
 
 function goToMap() {
 	$("#outer").load('levels/map.html', function(response, status, xhr) {
@@ -66,6 +86,7 @@ function goToMap() {
 			var msg = "Sorry but there was an error: ";
 			console.log(msg + xhr.status + " " + xhr.statusText);
 		} else {
+			updateMapStamps();
 			mapReady();
 		}
 	});
@@ -82,6 +103,7 @@ function goToLevel() {
 				$("#a-headline").append("That is the right answer, you got the stamp!!!");
 				$("#answer img").attr("src","/images/Assets/Success_Page/" + level + ".png");
 				$("#answer img").addClass("stamp");
+				prize[level]=true;
 			} else {
 				$("#a-headline").append("Wrong answer, you got a stinky fish.");
 				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
