@@ -240,6 +240,11 @@ height: 100px;
 
 }
 
+#level-content {
+	height:100%;
+	width:100%;
+}
+
 #question {
 	height : 77.4%;
 }
