@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>PoundAround</title>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
 	<link href="default.css" media="screen" rel="stylesheet" type="text/css" />
 	<script src="javascripts/jquery-1.7.1.min.js" type="text/javascript"></script>
 	<script src="javascripts/application.js" type="text/javascript"></script>
@@ -53,7 +56,7 @@ Storage.prototype.getObject = function(key) {
     return value && JSON.parse(value);
 }
 //init level
-var level = 0;
+var level = 5;
 
 var levels={1 : {"name":"Europe", "question":"Can you buy a mobile for a £1?", 'answer':'yes', 'currency':'1$'},
 						2 : {"name":"Asia", "question":"How much curry can you buy for £1?", 'answer':'4', 'currency':'1$'},
@@ -74,7 +77,7 @@ function updateMapStamps(){
 		var id = '#' + db_level.name + '-map-stamp';
 		console.log(db_level.name + '-map-stamp');
 		if (!prize[i])
-				$(id).css("background-image", "url(/images/Assets/Levels_page/fish_small.png)");
+				$(id).css("background-image", "url(images/Assets/Levels_page/fish_small.png)");
 				$(id).css("visibility", "visible");
 	}
 }
@@ -101,12 +104,12 @@ function goToLevel() {
 			var db_level = localStorage.getObject('levels')[level];
 			if (answer == db_level.answer) {
 				$("#a-headline").append("That is the right answer, you got the stamp!!!");
-				$("#answer img").attr("src","/images/Assets/Success_Page/" + level + ".png");
+				$("#answer img").attr("src","images/Assets/Success_Page/" + level + ".png");
 				$("#answer img").addClass("stamp");
 				prize[level]=true;
 			} else {
 				$("#a-headline").append("Wrong answer, you got a stinky fish.");
-				$("#answer img").attr("src","/images/Assets/Success_Page/Fish.png");
+				$("#answer img").attr("src","images/Assets/Success_Page/Fish.png");
 				$("#answer img").addClass("fish");
 			}
 			$("#answer").show();
@@ -140,30 +143,43 @@ function mapReady(){
 	switch(level)
 	{
 		case 0:
-		$("#map").css('background-image', "url(/images/Assets/Levels_page/Level_1B.png)");
+		$("#map").css('background-image', "url(images/Assets/Levels_page/Level_1B.png)");
 		break;
 		case 1:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_2B.png)");
+		$("#map").css("background-image", "url(images/Assets/Levels_page/Level_2B.png)");
 		break;
 		case 2:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_3B.png)");
+		$("#map").css("background-image", "url(images/Assets/Levels_page/Level_3B.png)");
 		break;
 		case 3:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_4B.png)");
+		$("#map").css("background-image", "url(images/Assets/Levels_page/Level_4B.png)");
 		break;
 		case 4:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Level_5B.png)");
+		$("#map").css("background-image", "url(images/Assets/Levels_page/Level_5B.png)");
 		break;
 		case 5:
-		$("#map").css("background-image", "url(/images/Assets/Levels_page/Complete_mapB.png)");
+		$("#map").css("background-image", "url(images/Assets/Levels_page/Complete_mapB.png)");
 		$("#play-button").attr("id", "prize-button");
-		$("#play-button").attr("src", "/images/Assets/Levels_page/Prize_button.png");
+		$("#play-button").attr("src", "images/Assets/Levels_page/Prize_button.png");
 		$("a").attr("href", "#")
-		$("#congrats").css("background-image", "url(/images/Assets/Levels_page/congrats.png)");
+		$("#congrats").css("background-image", "url(images/Assets/Levels_page/congrats.png)");
 		break;
 		default:
 		console.log(level);
 	}
+
+	$("#prize-button").click(function() {
+		$("#outer").load('levels/prize.html', function(response, status, xhr) {
+			//console.log(response);
+			if (status == "error") {
+				var msg = "Sorry but there was an error: ";
+				console.log(msg + xhr.status + " " + xhr.statusText);
+			} else {
+				var video = document.getElementById('prize-video');
+				  video.play();
+			}
+		});
+	});
 
 	$("#play-button").click(function() {
 		console.log("level: "+level);
@@ -245,7 +261,7 @@ function switchBox(box){
 	switchAllBoxesOff();
 	$(box).toggleClass("on");
 	answer = box.id.split('-')[0];
-	$(".question-graphic img").attr("src", "/images/Assets/Game_page/Game_Illustrations/lev1_" + answer + ".png")
+	$(".question-graphic img").attr("src", "images/Assets/Game_page/Game_Illustrations/lev1_" + answer + ".png")
 }
 
 function switchAllBoxesOff() {

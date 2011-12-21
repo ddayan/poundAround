@@ -18,7 +18,7 @@ body {
 	height : 88px;
 	top : 151px;
 	left : 475px;
-	background : url("/images/Assets/Levels_page/stamp_euro.png") no-repeat;
+	background : url("images/Assets/Levels_page/stamp_euro.png") no-repeat;
 }
 
 #Asia-map-stamp {
@@ -26,7 +26,7 @@ body {
 	height : 103px;
 	top : 108px;
 	left : 585px;
-	background : url("/images/Assets/Levels_page/stamp_asia.png") no-repeat;
+	background : url("images/Assets/Levels_page/stamp_asia.png") no-repeat;
 }
 
 #Australia-map-stamp {
@@ -34,7 +34,7 @@ body {
 	height : 93px;
 	top : 196px;
 	left : 715px;
-	background : url("/images/Assets/Levels_page/stamp_aus.png") no-repeat;
+	background : url("images/Assets/Levels_page/stamp_aus.png") no-repeat;
 }
 
 #Africa-map-stamp {
@@ -42,7 +42,7 @@ body {
 	height : 93px;
 	top : 10px;
 	left : 417px;
-	background : url("/images/Assets/Levels_page/stamp_africa.png") no-repeat;
+	background : url("images/Assets/Levels_page/stamp_africa.png") no-repeat;
 }
 
 #America-map-stamp {
@@ -50,7 +50,7 @@ body {
 	height : 93px;
 	top : -179px;
 	left : 171px;
-	background : url("/images/Assets/Levels_page/stamp_america.png") no-repeat;
+	background : url("images/Assets/Levels_page/stamp_america.png") no-repeat;
 }
 
 .center {
@@ -140,12 +140,12 @@ body {
 
 @font-face {
 	font-family: currency_font;
-	src: url(/images/Assets/Game_page/fonts/Futura_LT_Medium.ttf);
+	src: url(images/Assets/Game_page/fonts/Futura_LT_Medium.ttf);
 }
 
 @font-face {
 	font-family: q_font;
-	src: url(/images/Assets/Game_page/fonts/CANTABIL.ttf);
+	src: url(images/Assets/Game_page/fonts/CANTABIL.ttf);
 }
 
 .game-font {
@@ -168,21 +168,21 @@ bottom:-35px;
 #currency em{
 display: block;
 float: left;
-background: url(/images/Assets/Game_page/Currency_Converter/CC_World.png) no-repeat;
+background: url(images/Assets/Game_page/Currency_Converter/CC_World.png) no-repeat;
 height: 100px;
 width: 119px;
 }
 #currency span{
 display: block;
 float: left;
-background: url(/images/Assets/Game_page/Currency_Converter/CC_bar_middle.png) repeat-x;
+background: url(images/Assets/Game_page/Currency_Converter/CC_bar_middle.png) repeat-x;
 height: 164px;
 
 }
 #currency b{
 display: block;
 float: left;
-background: url(/images/Assets/Game_page/Currency_Converter/CC_bar_end.png) no-repeat;
+background: url(images/Assets/Game_page/Currency_Converter/CC_bar_end.png) no-repeat;
 width: 21px;
 height: 100px;
 }
@@ -274,36 +274,36 @@ padding: 50px 20px 20px 100px;
 }
 
 #prize-button {
-	background: url(/images/Assets/Buttons/Prize_bt.png) no-repeat;
+	background: url(images/Assets/Buttons/Prize_bt.png) no-repeat;
 }
 
 #prize-button:active {
-	background: url(/images/Assets/Buttons/Prize_bt_C.png) no-repeat;
+	background: url(images/Assets/Buttons/Prize_bt_C.png) no-repeat;
 }
 
 #play-button {
-	background: url(/images/Assets/Buttons/Play_bt.png) no-repeat;
+	background: url(images/Assets/Buttons/Play_bt.png) no-repeat;
 }
 
 #play-button:active {
-	background: url(/images/Assets/Buttons/Play_bt_C.png) no-repeat;
+	background: url(images/Assets/Buttons/Play_bt_C.png) no-repeat;
 }
 
 #next-button {
-	background: url(/images/Assets/Buttons/Next_bt.png) no-repeat;
+	background: url(images/Assets/Buttons/Next_bt.png) no-repeat;
 }
 
 #next-button:active {
-	background: url(/images/Assets/Buttons/Next_bt_C.png) no-repeat;
+	background: url(images/Assets/Buttons/Next_bt_C.png) no-repeat;
 }
 
 #enter-button {
 #	margin-top:10px;
-	background: url(/images/Assets/Buttons/Enter_bt.png) no-repeat;
+	background: url(images/Assets/Buttons/Enter_bt.png) no-repeat;
 }
 
 #enter-button:active {
-	background: url(/images/Assets/Buttons/Enter_bt_C.png) no-repeat;
+	background: url(images/Assets/Buttons/Enter_bt_C.png) no-repeat;
 }
 
 .float-right {
@@ -340,7 +340,7 @@ padding: 50px 20px 20px 100px;
 	width:650px; 
 	height:450px;
 	margin-top:5%;
-	background: url(/images/logo.png) no-repeat;
+	background: url(images/logo.png) no-repeat;
 	background-position:center;
 }
 .border {
@@ -378,7 +378,19 @@ padding: 50px 20px 20px 100px;
 #gumball-machine {
 	width: 35%;
 	float: right;
-	background: url(/images/gumball_machine.png) no-repeat;
+	background: url(images/gumball_machine.png) no-repeat;
+}
+
+#prize-page {
+	height:100%;
+	width:100%;
+	background: url(images/Assets/prize_page/TV.png) no-repeat;
+}
+
+#prize-video {
+	position:relative;
+	top: 190px;
+	left:70px;
 }
 
 #sub-map-1{
