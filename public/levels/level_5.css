@@ -1,0 +1,5 @@
+#dummy_div {
+	background: url("../images/levels/gumball_machine.png") no-repeat -9999px -9999px,
+							url("../images/levels/tab_to_select.png") no-repeat -9999px -9999px,
+							url("../images/Success_Page/5.png") no-repeat -9999px -9999px;
+}

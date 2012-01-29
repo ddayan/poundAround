@@ -1,0 +1,11 @@
+#dummy_div {
+	background: url("../images/levels/lev2_ans1_off.png") no-repeat -9999px -9999px,
+							url("../images/levels/lev2_ans1_on.png") no-repeat -9999px -9999px,
+							url("../images/levels/lev2_ans2_off.png") no-repeat -9999px -9999px,
+							url("../images/levels/lev2_ans2_on.png") no-repeat -9999px -9999px,
+							url("../images/levels/lev2_ans3_off.png") no-repeat -9999px -9999px,
+							url("../images/levels/lev2_ans3_on.png") no-repeat -9999px -9999px,
+							url("../images/levels/lev2_ans4_off.png") no-repeat -9999px -9999px,
+							url("../images/levels/lev2_ans4_on.png") no-repeat -9999px -9999px,
+							url("../images/Success_Page/2.png") no-repeat -9999px -9999px;
+}
