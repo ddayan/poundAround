@@ -1,0 +1,8 @@
+#dummy_div {
+	background: url("../images/map/Level_1B.png") no-repeat -9999px -9999px,
+							url("../images/map/Level_2B.png") no-repeat -9999px -9999px,
+							url("../images/map/Level_3B.png") no-repeat -9999px -9999px,
+							url("../images/map/Level_4B.png") no-repeat -9999px -9999px,
+							url("../images/map/Level_5B.png") no-repeat -9999px -9999px,
+							url("../images/map/Complete_mapB.png") no-repeat -9999px -9999px;
+}
