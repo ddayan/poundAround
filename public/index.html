@@ -87,7 +87,7 @@ function updateMapStamps(){
 	for (var i=1; i<=level; i++){
 		var db_level = db_levels[i];
 		var id = '#' + db_level.name + '-map-stamp';
-		console.log(db_level.name + '-map-stamp');
+		// console.log(db_level.name + '-map-stamp');
 		if (!prize[i])
 				$(id).css("background-image", "url(images/map/fish_small.png)");
 				$(id).css("visibility", "visible");
@@ -99,7 +99,7 @@ function goToMap() {
 		//console.log(response);
 		if (status == "error") {
 			var msg = "Sorry but there was an error: ";
-			console.log(msg + xhr.status + " " + xhr.statusText);
+			// console.log(msg + xhr.status + " " + xhr.statusText);
 		} else {
 			updateMapStamps();
 			mapReady();
@@ -151,7 +151,7 @@ function goToLevel() {
 }
 
 function mapReady(){
-	console.log(level);
+	// console.log(level);
 	switch(level)
 	{
 		case 0:
@@ -177,7 +177,7 @@ function mapReady(){
 		$("#congrats").css("background-image", "url(images/map/congrats.png)");
 		break;
 		default:
-		console.log(level);
+		// console.log(level);
 	}
 
 	$("#prize-button").click(function() {
@@ -185,7 +185,7 @@ function mapReady(){
 			//console.log(response);
 			if (status == "error") {
 				var msg = "Sorry but there was an error: ";
-				console.log(msg + xhr.status + " " + xhr.statusText);
+				// console.log(msg + xhr.status + " " + xhr.statusText);
 			} else {
 				var video = document.getElementById('prize-video');
 				  video.play();
@@ -194,14 +194,14 @@ function mapReady(){
 	});
 
 	$("#play-button").click(function() {
-		console.log("level: "+level);
+		// console.log("level: "+level);
 		//$("#outer").empty();
 		//Load level page layout
 		$("#outer").load('levels/show.html', function(response, status, xhr) {
 			//console.log(response);
 			if (status == "error") {
 				var msg = "Sorry but there was an error: ";
-				console.log(msg + xhr.status + " " + xhr.statusText);
+				// console.log(msg + xhr.status + " " + xhr.statusText);
 			} else {
 				//Load Level content
 				level++;
@@ -223,7 +223,7 @@ function loadLevelContent() {
 		goToLevel();
 		if (status == "error") {
 			var msg = "Sorry but there was an error: ";
-			console.log(msg + xhr.status + " " + xhr.statusText);
+			// console.log(msg + xhr.status + " " + xhr.statusText);
 		}else {}
 	});
 }
